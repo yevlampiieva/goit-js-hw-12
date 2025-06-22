@@ -1,0 +1,103 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.form label {
+  display: inline-block;
+  min-width: 272px;
+}
+
+.form input {
+  width: 272px;
+  padding: 8px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 250ms linear;
+}
+
+.form input:hover {
+  border: 1px solid #000;
+}
+
+.form input:focus {
+  border: 1px solid #4e75ff;
+}
+
+.form button {
+  border-color: transparent;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  background-color: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  transition: background-color 250ms linear;
+}
+
+.form button:hover,
+.form button:focus {
+  background-color: #6c8cff;
+}
+
+.gallery {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.gallery-item {
+  display: block;
+  width: calc((100% - 54px) / 3);
+  border: 1px solid #808080;
+}
+
+.image-container {
+  height: 152px;
+}
+
+.image-container img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-inform {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 4px;
+  text-align: center;
+}
+
+.image-inform-title {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.image-inform-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
