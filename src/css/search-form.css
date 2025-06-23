@@ -33,7 +33,8 @@
   border: 1px solid #4e75ff;
 }
 
-.form button {
+.form button,
+.load-more-btn {
   border-color: transparent;
   border-radius: 8px;
   padding: 8px 16px;
@@ -48,7 +49,9 @@
 }
 
 .form button:hover,
-.form button:focus {
+.form button:focus,
+.load-more-btn:hover,
+.load-more-btn:focus {
   background-color: #6c8cff;
 }
 
@@ -100,4 +103,15 @@
   line-height: 2;
   letter-spacing: 0.04em;
   color: #2e2f42;
+}
+
+.load-more-btn {
+  width: 125px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 32px;
+}
+
+.hidden {
+  display: none;
 }
