@@ -13,6 +13,7 @@ import {
 
 const form = document.querySelector('.form');
 const loadMoreBtn = document.querySelector('.load-more-btn');
+const gallery = document.querySelector('.gallery');
 
 let searchImage = '';
 let page = 1;
@@ -48,6 +49,7 @@ async function handleSearchImages(event) {
   try {
     page = 1;
     const data = await getImagesByQuery(searchImage, page);
+    totalPages = Math.ceil(data.totalHits / limit);
     if (data.hits.length === 0) {
       iziToast.error({
         message:
@@ -68,7 +70,7 @@ async function handleSearchImages(event) {
     hideLoader();
     form.reset();
 
-    if (data.hits.length < limit && totalPages === 1) {
+    if (page >= totalPages) {
       hideLoadMoreButton();
       iziToast.error({
         message: `We're sorry, but you've reached the end of search results.`,
@@ -118,11 +120,7 @@ async function handleLoadMoreImages() {
 
     createGallery(data.hits);
 
-    if (page > totalPages && data.hits.length <= limit) {
-      hideLoadMoreButton();
-    }
-
-    const image = document.querySelector('.gallery-item');
+    const image = gallery.firstElementChild;
     const imageHeight = image.getBoundingClientRect().height;
 
     window.scrollBy({
